@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<!--line Separator-->
+
+{% block content %}
+
+<!--line Separator-->
+<h1 class="text-center mb-5">You Have Been Logged Out.!</h1>
+
+
+<p class="text-center mb-5"">
+  Thank you for using our application. You can &nbsp;
+  <a
+    class="btn btn-outline-secondary"
+    href="{% url 'login' %}"
+    >Login again</a
+  >
+  &nbsp; if you wish.
+</p>
+<br class="mb-5">
+<br class="mb-5">
+<br class="mb-5">
+<br class="mb-5">
+<!--
+<script>
+  // Wait for 3 seconds and then redirect to 'home'
+  setTimeout(function () {
+    window.location.href = "{% url 'all-posts' %}";
+  }, 5000); // 3000 milliseconds = 3 seconds
+</script>
+-->
+{% endblock %}

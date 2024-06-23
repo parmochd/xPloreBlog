@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<!--line Separator-->
+
+{% block content %}
+
+<!--line Separator-->
+
+{% if user.is_authenticated %}
+<h4 class="mb-5 text-center">{{ message }}</h4>
+<br class="mb-5" />
+<br class="mb-5" />
+<br class="mb-5" />
+<br class="mb-5" />
+<br class="mb-5" />
+<br class="mb-5" />
+<br class="mb-5" />
+<script>
+  // Wait for 3 seconds and then redirect to 'home'
+  setTimeout(function () {
+    window.location.href = "{% url 'all-posts' %}";
+  }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+{% endif %} {% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+<!--Line Separator-->
+{% load static %}
+<!--Line Separator-->
+{% block content %}
+
+<!-- ======= About Section ======= -->
+<section class="about" id="about">
+  <div class="container text-center">
+    <h2>About Bell Template</h2>
+
+    <p>
+      Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit
+      voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, per nihil
+      dicant commodo an. Eum tacimates erroribus ad. Atqui feugiat euripidis ea
+      pri, sed veniam tacimates ex. Menandri temporibus an duo.
+    </p>
+
+    <div class="row stats-row">
+      <div class="stats-col text-center col-md-3 col-sm-6">
+        <div class="circle">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="232"
+            data-purecounter-duration="1"
+            class="purecounter stats-no"
+          ></span>
+          Satisfied Customers
+        </div>
+      </div>
+
+      <div class="stats-col text-center col-md-3 col-sm-6">
+        <div class="circle">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="79"
+            data-purecounter-duration="1"
+            class="purecounter stats-no"
+          ></span>
+          Released Projects
+        </div>
+      </div>
+
+      <div class="stats-col text-center col-md-3 col-sm-6">
+        <div class="circle">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="1463"
+            data-purecounter-duration="1"
+            class="purecounter stats-no"
+          ></span>
+          Hours Of Support
+        </div>
+      </div>
+
+      <div class="stats-col text-center col-md-3 col-sm-6">
+        <div class="circle">
+          <span
+            data-purecounter-start="0"
+            data-purecounter-end="68"
+            data-purecounter-duration="1"
+            class="purecounter stats-no"
+          ></span>
+          Hard Workers
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End About Section -->
+<script src="{% static 'assets/purecounter/purecounter_vanilla.js' %}"></script>
+{% endblock content %}

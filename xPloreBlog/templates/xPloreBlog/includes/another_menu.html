@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="/"
+      ><img
+        class="rounded-circle shadow-1-strong me-3"
+        height="60"
+        width="60"
+        src="{% static 'assets/img/pmlogo.png' %}"
+        alt="PMHut Logo"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <!-- TODO: Hide the Login/Registration navigation for logged-in users -->
+        {% if not user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link px-lg-3 py-3 py-lg-4" href="">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-lg-3 py-3 py-lg-4" href="">Register</a>
+        </li>
+        {% endif %} {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link px-lg-3 py-3 py-lg-4" href="">Log Out</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

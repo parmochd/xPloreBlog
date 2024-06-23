@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+<!--Line Separator-->
+
+{% load static %}
+<!--Line Separator-->
+
+{% block content %}
+
+<section id="Top-rated-details" class="pt-0">
+  <div class="container" style="height: 275 px">
+    <div class="row gy-4">
+      <div class="col-lg-12">
+        <h1 class="fs-6 fw-normal text-center text-secondary mb-5 text-info">
+          <i class="fas fa-location-arrow"></i> Top Rated Posts
+        </h1>
+        <div class="bd-example">
+          <div
+            id="carouselPostCaptions"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselPostCaptions"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#carouselPostCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselPostCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div
+                  class="d-inline text-left h5 bg-info text-dark"
+                  width="10px"
+                >
+                  {{ top_1_post.avg_post_comment|default_if_none:"0" }} rating
+                </div>
+                <a href="{% url 'single-post' top_1_post.slug %}">
+                  <img
+                    src="{{ top_1_post.img_url }}"
+                    class="d-block w-100 img-fluid tm-mb-40 tm-sm-20"
+                    style="height: 450px"
+                    alt="Top rated post"
+                  />
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>
+                    <a
+                      class="effect-lily tm-post-link tm-color-primary bg-light"
+                      href="{% url 'single-post' top_1_post.slug %}"
+                      >{{ top_1_post.title }}</a
+                    >
+                  </h5>
+                  <p class="text-info">
+                    <a
+                      class="effect-lily tm-post-link tm-color-primary bg-light"
+                      href="{% url 'single-post' top_1_post.slug %}"
+                      >{{ top_1_post.subtitle }}</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div
+                  class="d-inline text-left h5 bg-info text-dark"
+                  width="10px"
+                >
+                  {{ top_2_post.avg_post_comment|default_if_none:"0" }} rating
+                </div>
+                <a href="{% url 'single-post' top_2_post.slug %}">
+                  <img
+                    src="{{ top_2_post.img_url }}"
+                    class="d-block w-100 img-fluid tm-mb-40"
+                    style="height: 450px"
+                    alt="Top rated post"
+                  />
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>
+                    <a
+                      class="effect-lily tm-post-link tm-color-primary bg-light"
+                      href="{% url 'single-post' top_2_post.slug %}"
+                      >{{ top_2_post.title }}</a
+                    >
+                  </h5>
+                  <p class="text-info">
+                    <a
+                      class="effect-lily tm-post-link tm-color-primary bg-light"
+                      href="{% url 'single-post' top_2_post.slug %}"
+                      >{{ top_2_post.subtitle }}</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div
+                  class="d-inline text-left h5 bg-info text-dark"
+                  width="10px"
+                >
+                  {{ top_3_post.avg_post_comment|default_if_none:"0" }} rating
+                </div>
+                <a href="{% url 'single-post' top_3_post.slug %}">
+                  <img
+                    src="{{ top_3_post.img_url }}"
+                    class="d-block w-100 img-fluid tm-mb-40"
+                    style="height: 450px"
+                    alt="Top rated post"
+                  />
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>
+                    <a
+                      class="effect-lily tm-post-link tm-color-primary bg-light"
+                      href="{% url 'single-post' top_3_post.slug %}"
+                      >{{ top_3_post.title }}</a
+                    >
+                  </h5>
+                  <p class="text-info">
+                    <a
+                      class="effect-lily tm-post-link tm-color-primary bg-light"
+                      href="{% url 'single-post' top_3_post.slug %}"
+                      >{{ top_3_post.subtitle }}</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselPostCaptions"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselPostCaptions"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

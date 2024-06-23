@@ -1,0 +1,66 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="menuModal"
+  tabindex="-1"
+  aria-labelledby="menuModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="false"
+>
+  <div
+    class="modal-dialog modal-sm"
+    style="
+      max-width: calc(100vh - 400px);
+      margin-left: 0;
+      background-color: #0cc;
+    "
+  >
+    <div class="modal-content" style="background-color: #0cc">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="max-height: calc(100vh - 260px)" ;>
+        <nav class="tm-nav" id="tm-nav">
+          <ul>
+            <li>
+              <a href="/" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Blog Home
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'top-rated-posts' %}" class="tm-nav-link">
+                <i class="fas fa-pen"></i>
+                Top Rated
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'read-later-posts' %}" class="tm-nav-link">
+                <i class="fas fa-book-reader"></i>
+                Read Later
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}" class="tm-nav-link">
+                <i class="fas fa-users"></i>
+                About x-Plore
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'contact' %}" class="tm-nav-link">
+                <i class="far fa-comments"></i>
+                Contact Us
+              </a>
+            </li>
+            <!-- Include other menu items -->
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

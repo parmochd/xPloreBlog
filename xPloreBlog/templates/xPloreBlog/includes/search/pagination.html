@@ -1,0 +1,58 @@
+<!-- pagination starts -->
+<nav aria-label="...">
+    <ul class="pagination flex-wrap justify-content-center">
+      <li class="page-item disabled">
+        {% if qs.has_previous %}
+          <li class="page-item">
+            <a class="page-link effect-lily tm-post-link tm-color-primary" href="?query={{ query }}&searchbtn=&page={{ qs.previous_page_number }}">Prev</a>
+          </li>
+        {% endif %}
+        {% if qs.number > 3 %}
+          <li class="page-item">
+            <a class="page-link effect-lily tm-post-link tm-color-primary" href="?query={{ query }}&searchbtn=&page=1">1</a>
+          </li>
+        {% endif %}
+        {% if qs.number > 4 %}
+            <li class="page-item">
+            <span class="page-link effect-lily tm-post-link tm-color-primary">....</span>
+            </li>
+        {% endif %}
+      </li>
+  
+      {% for i in qs.paginator.page_range %}
+        {% if qs.number == i %}
+          <li class="page-item active">
+            <span class="page-link effect-lily tm-post-link tm-color-primary" style="background-color: #0CC">
+              {{ i }}
+              <span class="sr-only"></span>
+            </span>
+          </li>
+          {% elif i > qs.number|add:'-3' and i < qs.number|add:'3' %}
+            <li class="page-item">
+              <a class="page-link effect-lily tm-post-link tm-color-primary" href="?query={{ query }}&searchbtn=&page={{ i }}" >{{ i }}</a>
+            </li>
+        {% endif %}
+      {% endfor %}
+  
+      {% if qs.has_next %}
+        {% if qs.number < qs.paginator.num_pages|add:'-3' %}
+            <li class="page-item">
+                <span class="page-link effect-lily tm-post-link tm-color-primary">....</span>
+            </li>
+            <li class="page-item">
+                <a class="page-link effect-lily tm-post-link tm-color-primary" href="?query={{ query }}&searchbtn=&page={{ qs.paginator.num_pages }}">{{ qs.paginator.num_pages }}</a>
+            </li>
+        {% elif qs.number < qs.paginator.num_pages|add:'-2' %}
+            <li class="page-item">
+                <a class="page-link effect-lily tm-post-link tm-color-primary" href="?query={{ query }}&searchbtn=&page={{ qs.paginator.num_pages }}">{{ qs.paginator.num_pages }}</a>
+            </li>
+        {% endif %}  
+        <li class="page-item">
+          <a class="page-link effect-lily tm-post-link tm-color-primary" href="?query={{ query }}&searchbtn=&page={{ qs.next_page_number }}"> Next</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+  <br>
+  
+  <!-- pagination end -->

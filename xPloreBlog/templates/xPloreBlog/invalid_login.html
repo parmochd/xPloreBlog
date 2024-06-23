@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+<!--line Separator-->
+
+{% block content %}
+
+<!--line Separator-->
+<h1 class="text-center mb-5">Invalid credentials!</h1>
+
+
+<p class="text-center mb-5"">
+  Invalid username or password. Please try again or &nbsp;
+  <a
+    class="btn btn-outline-secondary"
+    data-toggle="modal"
+    href=""
+    onclick="openRegisterModal();"
+    >create an account</a
+  >
+  &nbsp; if you don't have one.
+</p>
+<br class="mb-5">
+<br class="mb-5">
+<br class="mb-5">
+<br class="mb-5">
+<!--
+<script>
+  // Wait for 3 seconds and then redirect to 'home'
+  setTimeout(function () {
+    window.location.href = "{% url 'all-posts' %}";
+  }, 5000); // 3000 milliseconds = 3 seconds
+</script>
+-->
+{% endblock %}

@@ -1,0 +1,35 @@
+<!-- Modal window Code Start-->
+<div class="col-12 text-right">
+  <!--
+    <button class="btn btn-outline-secondary">Log in</button>
+    <button class="btn btn-dark">Sign up</button>
+    -->
+  <!-- TODO: Hide the Login/Registration navigation for logged-in users -->
+  {% if not user.is_authenticated %}
+  <a class="btn btn-light" style="color: #0cc" href="{% url 'login' %}"
+    >LOGIN</a
+  >
+
+  <a
+    class="btn btn-outline-info"
+    style="color: #0cc"
+    href="{% url 'register' %}"
+    >REGISTER</a
+  >
+  {% endif %}
+
+  <!--if user is authenticated then able to view only logout-->
+  {% if user.is_authenticated %}
+  <a
+    class="btn btn-light"
+    style="color: #0cc"
+    href="{% url 'change-password' %}"
+    >CHANGE PASSWORD
+  <a
+    class="btn btn-outline-info"
+    style="color: #0cc"
+    href="{% url 'logout' %}"
+    >LOGOUT
+  </a>
+  {% endif %}
+</div>

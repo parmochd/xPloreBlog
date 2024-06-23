@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!--line Separator-->
+
+{% block content %}
+
+<!--line Separator-->
+
+{% if user.is_authenticated %}
+<p class="mb-5">
+  Welcome, {{ user.username }}! You have Successfully Activated the Account and
+  Logged in!
+</p>
+<script>
+  // Wait for 3 seconds and then redirect to 'home'
+  setTimeout(function () {
+    window.location.href = "{% url 'all-posts' %}";
+  }, 5000); // 3000 milliseconds = 3 seconds
+</script>
+{% endif %} {% endblock %}

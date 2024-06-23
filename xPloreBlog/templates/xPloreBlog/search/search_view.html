@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+<!--Line Splitter-->
+{% load static %}
+<!--line Separator-->
+{% block content %}
+<!--line Separator-->
+
+<!-- Password Reset 1 - Component -->
+<div class="bg-light py-3 py-md-5">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-10 col-xl-10 col-xxl-8">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+          <div class="row gy-3 mb-5">
+            <div class="col-12">
+              <h2 class="fs-6 fw-normal text-center text-secondary m-0">
+                Find Blog Posts
+              </h2>
+              <hr />
+              <p class="text-center">
+                {{ q_count }} results for <b>{{ query }}
+              </p>
+            </div>
+            {% for object in qs %}
+            <!--Line Seperator-->
+            {% if object_name == 'Post' %}
+            <div class="row">
+              <div class="col-12 tm-color-primary">
+                Blog post:
+                <a href="{% url 'single-post' object.slug %}" class="effect-lily tm-post-link tm-color-primary h6">{{ object.title }} | {{ object.subtitle }}</a>
+              </div>
+            </div>
+            {% endif %}
+            <!--Line Seperator-->
+            {% endfor %}
+            
+          <div>         
+        </div>
+      </div>
+      <div class='d-flex justify-content-end'>
+        <!--Pagination -->
+        {% include "xPloreBlog/includes/search/pagination.html"  %}
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--line Separator-->
+{% endblock %}

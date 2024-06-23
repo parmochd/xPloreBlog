@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+<!--Line Separator-->
+{% load static %}
+<!--Line Separator-->
+{% block content %}
+<h1 class="text-center mb-5">Activation Email Sent</h1>
+<p style="margin-top: 30px">
+  An activation link has been sent to your email address. Please check your
+  inbox and click the activation link to activate your account.
+</p>
+<p class="mt-5">Thanks, pmHut Team</p>
+<script>
+  // Wait for 3 seconds and then redirect to 'home'
+  setTimeout(function () {
+    window.location.href = "{% url 'all-posts' %}";
+  }, 5000); // 3000 milliseconds = 3 seconds
+</script>
+{% endblock content %}

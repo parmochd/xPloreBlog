@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+<!--Line Separator-->
+
+{% load static %}
+<!--Line Separator-->
+
+{% block content %}
+
+<!-- Chart Start -->
+
+<div class="row tm-row">
+  <div class="col-sm-12 col-xl-6">
+    <div class="bg-light rounded h-100 p-4">
+      <h6 class="mb-4">Top Rated Posts</h6>
+      <div>
+        <img
+          class="dashboard-chart"
+          width="100%"
+          height="auto"
+          src="{{ top_rated_posts_chart }}"
+          alt="Top Rated Posts Chart"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-xl-6">
+    <div class="bg-light rounded h-100 p-4">
+      <h6 class="mb-4">Author Wise Posts</h6>
+      <div>
+        <img
+          class="dashboard-chart"
+          width="100%"
+          height="auto"
+          src="{{ author_wise_posts_chart }}"
+          alt="Author Wise Posts Chart"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-xl-6">
+    <div class="bg-light rounded h-100 p-4">
+      <h6 class="mb-4">Category Wise Posts</h6>
+      <div>
+        <img
+          class="dashboard-chart"
+          width="100%"
+          height="auto"
+          src="{{ category_wise_posts_chart }}"
+          alt="Category Wise Posts Chart"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-xl-6">
+    <div class="bg-light rounded h-100 p-4">
+      <h6 class="mb-4">Tag Wise Posts</h6>
+      <div>
+        <img
+          class="dashboard-chart"
+          width="100%"
+          height="auto"
+          src="{{ tag_wise_posts_chart }}"
+          alt="Tag Wise Posts Chart"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 col-xl-6">
+    <div class="bg-light rounded h-100 p-4">
+      <h6 class="mb-4">Recent Posts</h6>
+      <div>
+        <img
+          class="dashboard-chart"
+          width="100%"
+          height="auto"
+          src="{{ recent_posts_chart }}"
+          alt="Recent Posts Chart"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart End -->
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+{% endblock %}

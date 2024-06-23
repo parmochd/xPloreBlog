@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load custom_filters %}
+<!--Line Splitter-->
+{% load static %}
+
+<!--Line Splitter-->
+{% block content %}
+<!--Line Splitter-->
+{% if not has_posts %}
+<article class="col-12 col-md-12">
+  <hr class="tm-hr-primary pb-4" />
+</article>
+<h2 class="tm-pt-30 tm-color-primary tm-post-title mb-5 text-center">
+  Sorry! You didn't save any posts for later.
+</h2>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+{% else %}
+<div class="row tm-row">
+  <article class="col-12 col-md-12">
+    <hr class="tm-hr-primary pb-4" />
+  </article>
+</div>
+{% for post in posts %}
+<div class="accordion" id="read-later-post">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="read-later-post-heading">
+      <button
+        class="accordion-button border border-0 bg-white tm-color-primary tm-post-title"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#read_later_post-collapse"
+        aria-expanded="true"
+        aria-controls="read_later_post-collapse"
+      >
+        {{ post.title }}
+      </button>
+    </h2>
+    <div
+      id="read_later_post-collapse"
+      class="accordion-collapse collapse show"
+      aria-labelledby="read_later_post-heading"
+    >
+      <div
+        class="accordion-body tm-pt-10 ml-2"
+        style="font-size: 16px; line-height: 1.5"
+      >
+        {{ post.excerpt|safe|truncatechars_filled:200|linebreaks }}
+        <a
+          class="effect-lily tm-post-link tm-color-primary"
+          href="{% url 'single-post' post.slug %}"
+          class=" "
+          >read more...</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+<!--Line Splitter-->
+{% endif %}
+<!--Line Splitter-->
+{% endblock %}
